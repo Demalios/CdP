@@ -1,0 +1,102 @@
+Exemple de scénario d'ans le language Gherkin :
+
+Feature : US2 Formulaire d'atelier
+    Background : 
+        En tant que laboratoire, je dois pouvoir proposé un atelier.
+
+    Scenario : Je propose un atelier pour l'évènement
+        Given : 
+            - Je suis connecté en tant que laboratoire
+            - Je suis sur la page du formulaire de proposition d'atelier
+        When : 
+            - J'ajoute les information au formulaire de proposition d'atelier
+            - Je clique sur le boutton "Submit"
+        Then : 
+            - La page internet m'affiche que ma proposition d'atelier à bien été envoyé
+
+Feature : US3 Validation d'atelier
+    Background : 
+        En tant qu'organisateur, je dois pouvoir valider des ateliers
+
+    Scenario : Je valide un atelier
+        Given :
+            - Je suis connecté en tant qu'organisateur
+            - Je suis sur la page de validation des atelier
+        When :
+            - Je clique sur valider un atelier
+        Then :
+            - L'atelier en question est remplacé par un message indiquant qu'il est bien été validé
+    
+    Scenario : Je refuse un atelier
+        Given :
+            - Je suis connecté en tant qu'organisateur
+            - Je suis sur la page de validation des atelier
+        When :
+            - Je clique sur refuser un atelier
+        Then :
+            - L'atelier en question est remplacé par un message indiquant qu'il est bien été rejeté
+
+
+Feature : US4 Ajout et suppression d'atelier
+    Background : 
+        En tant que laboratoire, je dois pouvoir ajouter ou supprimer un atelier des créneaux horaires
+
+    Scenario : Ajout d'atelier 
+        Given :
+            - Je suis connecté en tant que laboratoire
+            - Je suis sur la page d'ajout et suppression d'atelier
+        When :
+            - Je clique sur un créneau horaires
+            - J'y ajoute un de mes ateliers validé
+        Then :
+            - L'atelier s'ajoute sur le créneau horaire
+    
+    Scenario : Supression d'atelier 
+        Given :
+            - Je suis connecté en tant que laboratoire
+            - Je suis sur la page d'ajout et suppression d'atelier
+       When :
+            - Je clique sur l'atelier
+            - Je clique sur supprimer
+        Then :
+            - L'atelier se supprime du créneau horaire
+
+Feature : US6 Inscription et désincription d'un atelier
+    Background : 
+        En tant qu'enseigant je dois pouvoir inscrire mes élèves à un atelier
+
+    Scenario : Inscription à un atelier
+        Given :
+            - Je suis connecté en tant qu'enseigant 
+            - Je suis la page d'inscription aux ateliers
+        When :
+            - Je clique sur un atelier
+            - J'indique le nombre d'élèves
+            - Je clique sur confirmer l'inscription
+        Then :
+            - Un message de confirmation de l'inscription s'affiche
+
+    Scenario : Désinscription à un atelier
+        Given :
+            - Je suis connecté en tant qu'enseigant 
+            - Je suis la listant mes inscriptions
+        When :
+            - Je clique sur un atelier
+            - Je clique sur me désinscrire
+        Then :
+            - Un message de confirmation de la désinscription s'affiche
+
+Syntax pour un language de test :
+Le language doit permettre de :
+    - accéder à une page web : GetURL("...");
+    - lire/chercher sur une page web : Search(Element elem);
+    - écrire sur une page web : Write(String str);
+    - cliquer sur un boutton : PressButton(Key k);
+    - renvoyé le résultat : OutPut(File filename, String result);
+
+Information sur le test avec SéléniumWebDriver
+Ajout d'une balise <p><\p> autour de la description afin de facilité la recherche de la description pour la vérification de l'affichage.
+Voir M2-Workshops/scenario.js
+
+
+Organisation possible des dossiers :
