@@ -100,3 +100,7 @@ Voir M2-Workshops/scenario.js
 
 
 Organisation possible des dossiers :
+
+api/web ( contient tout les fichiers par rapport au page web ( .js, .ejs, .css, .html))
+api/dtb ( contient tout les fichiers par rapport à la base de donnée ( .sql ))
+api/srv ( contient tout les fichiers par rapport au serveur Apache )
